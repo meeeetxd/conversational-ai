@@ -3,14 +3,13 @@ import json
 
 class IntentDetector:
     def __init__(self):
-        # Use a multilingual model for better Hindi support
+        # language-model for intent detection
         self.classifier = pipeline(
             "text-classification",
             model="microsoft/DialoGPT-medium",
             return_all_scores=True
         )
-        
-        # Define intents - you can expand this
+        # Intents
         self.intents = {
             "greeting": ["hello", "hi", "namaste", "namaskar"],
             "farewell": ["bye", "goodbye", "alvida", "alavida"],
@@ -25,6 +24,6 @@ class IntentDetector:
         
         for intent, keywords in self.intents.items():
             if any(keyword in text_lower for keyword in keywords):
-                return intent, 0.9  # High confidence for rule-based
+                return intent, 0.9 
         
-        return "general", 0.5  # Default intent
+        return "general", 0.5 

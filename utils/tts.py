@@ -10,20 +10,18 @@ class TextToSpeech:
     def speak(self, text, language="en"):
         """Convert text to speech"""
         try:
-            # Detect language if not specified
             if language == "unknown":
-                language = "en"  # Default to English
-            
-            # Handle Hindi language code
+                language = "en"
+
             if language in ["hi", "hindi"]:
                 lang_code = "hi"
             else:
                 lang_code = "en"
             
-            # Generate speech
+            # speech generation
             tts = gTTS(text=text, lang=lang_code, slow=False)
             
-            # Save to temporary file
+            #temp file
             with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as tmp_file:
                 tts.save(tmp_file.name)
                 return tmp_file.name

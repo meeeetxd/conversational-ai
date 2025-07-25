@@ -10,7 +10,7 @@ class ResponseGenerator:
     def __init__(self):
         self.ollama_url = "http://localhost:11434/api/generate"
        
-        # Fallback responses if Ollama isn't available
+        #Fallback responses
         self.fallback_responses = {
             "greeting": {
                 "en": "Hello! How can I help you today?",
@@ -49,10 +49,8 @@ class ResponseGenerator:
     def generate_response(self, text, intent, language="en"):
         """Generate response using Ollama or fallback"""
         try:
-            # Try Ollama first
             return self.llm_response(text, language)
         except:
-            # Use fallback responses
             return self._get_fallback_response(intent, language)
    
     def _get_fallback_response(self, intent, language):

@@ -7,10 +7,7 @@ import warnings
 
 class SpeechToText:
     def __init__(self):
-        # Suppress the FP16 warning          
-        warnings.filterwarnings("ignore", message="FP16 is not supported on CPU")
-        
-        # Load Whisper model
+        #Whisper model
         self.model = whisper.load_model("medium")
     
     def record_audio(self, duration=5, sample_rate=16000):     

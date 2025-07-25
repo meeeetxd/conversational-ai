@@ -8,7 +8,6 @@ from utils.intent import IntentDetector
 from utils.response import ResponseGenerator
 from utils.tts import TextToSpeech
 
-# Initialize components
 @st.cache_resource
 def load_models():
     return {
@@ -27,13 +26,13 @@ def safe_file_cleanup(file_path, max_attempts=5, delay=0.1):
             return True
         except PermissionError:
             time.sleep(delay)
-            delay *= 2  # Exponential backoff
+            delay *= 2 
     return False
 
 def create_wav_file(audio_data, sample_rate):
     """Create WAV file with proper context management"""
     tmp_file = tempfile.NamedTemporaryFile(suffix=".wav", delete=False)
-    tmp_file.close()  # Close file handle immediately
+    tmp_file.close()  
     
     try:
         with wave.open(tmp_file.name, 'wb') as wav_file:
@@ -57,38 +56,32 @@ def main():
     st.subheader("Supports English and Hindi")
     
     models = load_models()
-    
-    # Create columns for better layout
+
     col1, col2 = st.columns([2, 1])
     
     with col1:
         st.header("Conversation")
         
-        # Audio recording
-        if st.button("🎤 Start Recording (5 seconds)", type="primary"):
+        if st.button("Start Recording (5 seconds)", type="primary"):
             with st.spinner("Recording..."):
                 try:
-                    # Record audio
                     audio_data, sample_rate = models['stt'].record_audio()
-                    
-                    # Create WAV file with proper handling
                     tmp_audio_path = create_wav_file(audio_data, sample_rate)
                     
-                    # Transcribe
+                    #transcribe
                     text, language = models['stt'].transcribe(tmp_audio_path)
                     
                     if text.strip():
                         st.success(f"**You said ({language}):** {text}")
-                        
-                        # Detect intent
+                        #intent detection
                         intent, confidence = models['intent'].detect_intent(text)
                         
-                        # Generate response
+                        #generate response
                         response = models['response'].generate_response(text, intent, language)
                         
                         st.info(f"**AI Response:** {response}")
                         
-                        # Convert to speech
+                        #speech conversion
                         audio_file = models['tts'].speak(response, language)
                         if audio_file:
                             st.audio(audio_file, format="audio/mp3")
