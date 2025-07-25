@@ -233,14 +233,13 @@ To use local Ollama instead of cloud APIs:
 
 ```
 vakta-ai/
-├── app.py                 # Main Streamlit application
-├── convoAi.py            # Simple CLI version
-├── requirements.txt      # Python dependencies
-├── .env.example         # Environment variables template
-├── .gitignore           # Git ignore file
-├── README.md            # This file
-│
-├── utils/               # Core modules
+├── app.py              # Main Streamlit application
+├── requirements.txt    # Python dependencies
+├── .env.example        # Environment variables template
+├── .gitignore          # Git ignore file
+├── README.md           # This file
+
+├── utils/              # Core modules
 │   ├── __init__.py
 │   ├── stt.py          # Speech-to-Text
 │   ├── intent.py       # Intent Detection
@@ -311,12 +310,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- **Issues**: [GitHub Issues](https://github.com/yourusername/vakta-ai/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/vakta-ai/discussions)
+- **Issues**: [GitHub Issues](https://github.com/meeeetxd/conversational-ai/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/meeeetxd/conversational-ai/discussions)
 - **Documentation**: This README and code comments
 
 ---
 
-**Made with ❤️ for multilingual AI conversations**
-
-*Vakta AI - Where technology meets conversation*
