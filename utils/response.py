@@ -8,7 +8,6 @@ load_dotenv()
 
 class ResponseGenerator:
     def __init__(self):
-        self.ollama_url = "http://localhost:11434/api/generate"
        
         #Fallback responses
         self.fallback_responses = {
