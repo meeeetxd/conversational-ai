@@ -119,8 +119,7 @@ def main():
     with col2:
         st.header("System Info")
         st.write("**Supported Languages:**")
-        st.write("- English")
-        st.write("- Hindi (हिंदी)")
+        st.write("- All") 
         
         st.write("**Features:**")
         st.write("- Speech-to-Text")
