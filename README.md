@@ -1,4 +1,4 @@
-# 🤖 Vakta AI - Multilingual Conversational Assistant
+# 🤖 Multilingual Conversational Assistant
 
 A sophisticated multilingual conversational AI system that seamlessly integrates speech-to-text, natural language understanding, intelligent response generation, and text-to-speech capabilities. Built with Python and Streamlit, Vakta AI supports both English and Hindi languages.
 
