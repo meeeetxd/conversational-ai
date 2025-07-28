@@ -1,6 +1,6 @@
-# 🤖 Vakta AI - Multilingual Conversational Assistant
+# 🤖 Multilingual Conversational Assistant
 
-A sophisticated multilingual conversational AI system that seamlessly integrates speech-to-text, natural language understanding, intelligent response generation, and text-to-speech capabilities. Built with Python and Streamlit, Vakta AI supports both English and Hindi languages.
+A sophisticated multilingual conversational AI system that seamlessly integrates speech-to-text, natural language understanding, intelligent response generation, and text-to-speech capabilities. Built with Python and Streamlit, this AI supports both English and Hindi languages.
 
 ![Python](https://img.shields.io/badge/python-v3.8+-blue.svg)
 ![Streamlit](https://img.shields.io/badge/streamlit-v1.29+-red.svg)
@@ -68,8 +68,8 @@ A sophisticated multilingual conversational AI system that seamlessly integrates
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/vakta-ai.git
-   cd vakta-ai
+   git clone https://github.com/yourusername/conversational-ai.git
+   cd conversational-ai
    ```
 
 2. **Create and activate virtual environment**
@@ -88,10 +88,8 @@ A sophisticated multilingual conversational AI system that seamlessly integrates
 
 4. **Set up environment variables**
    ```bash
-   # Copy the example environment file
-   cp .env.example .env
    
-   # Edit .env and add your API keys
+   # setup .env and add your API keys
    GROQ_API_KEY=your_groq_api_key_here
    ```
 
@@ -99,13 +97,6 @@ A sophisticated multilingual conversational AI system that seamlessly integrates
    ```bash
    streamlit run app.py
    ```
-
-### Quick Test
-
-For a simple command-line test without Streamlit:
-```bash
-python convoAi.py
-```
 
 ## 🔧 Configuration
 
@@ -232,7 +223,7 @@ To use local Ollama instead of cloud APIs:
 ## 📁 Project Structure
 
 ```
-vakta-ai/
+conversational-ai/
 ├── app.py              # Main Streamlit application
 ├── requirements.txt    # Python dependencies
 ├── .env.example        # Environment variables template
